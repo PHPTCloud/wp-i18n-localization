@@ -1,0 +1,100 @@
+.i18n__app {
+    width: 97%;
+    display: block;
+    position: relative;
+    margin: 10px 0;
+    background-color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 1.2em;
+}
+
+.i18n__app a {
+    text-decoration: none;
+}
+
+.app__menu {
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+}
+
+.app__menu li {
+    display: inline-block;
+}
+
+.app__menu li a {
+    color: #01142F;
+    padding: 10px;
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid #01142F;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all .1s ease;
+}
+
+.app__menu li a.is-active,
+.app__menu li a:hover {
+    background-color: #01142F;
+    color: #fff;
+}
+
+.app__container {
+    display: block;
+    padding: 10px 0;
+}
+
+.app__footer {
+    display: block;
+    text-align: center;
+}
+
+.app__footer img {
+    vertical-align: middle;
+}
+
+.app__footer a {
+    color: #0260E8;
+}
+
+.tabs__container {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.tabs {
+    width: 180px;
+}
+
+.tabs .tabs__button {
+    padding: 10px;
+    background-color: #F2F4F6;
+    border: 1px solid #F1F6FB;
+    color: #1A2026;
+    cursor: pointer;
+    transition: all .1s ease;
+    border-radius: 5px;
+    margin-bottom: 3px;
+}
+
+.tabs .tabs__button.is-active,
+.tabs .tabs__button:hover {
+    background-color: #01142F;
+    color: #fff;
+}
+
+.tabs-pages {
+    flex: 1;
+}
+
+.tabs-pages__page {
+    padding: 0 10px;
+    display: none;
+}
+
+.tabs-pages__page.is-active {
+    display: block;
+}
