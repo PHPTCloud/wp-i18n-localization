@@ -12,21 +12,46 @@
     <hr>
 
     <div class="app__container">
-        <?php
-        var_dump($languages);
-        ?>
         
         <div class="tabs__container">
             <div class="tabs">
                 <?php foreach($languages as $index => $language): ?>
-                    <div class="tabs__button <?=$index == 0 ? 'is-active': '';?>"><?= ucfirst($language['title']); ?></div>
+                    <div onclick="selectTab(<?= $index; ?>)" data-target="tab-page-<?= $index; ?>" class="tabs__button <?=$index == 0 ? 'is-active': '';?>"><?= ucfirst($language['title']); ?></div>
                 <?php endforeach; ?>
             </div>
 
             <div class="tabs-pages">
                 <?php foreach($languages as $index => $language): ?>
-                    <div class="tabs-pages__page <?=$index == 0 ? 'is-active': '';?>">
-                        
+                    <div id="tab-page-<?= $index; ?>" class="tabs-pages__page <?=$index == 0 ? 'is-active': '';?>">
+                        <?php if(isset($language['localization'])): ?>
+                            <form action="" method="POST">
+                                <button class="save-localization-button">Сохранить "<?= ucfirst($language['title']); ?>"</button>
+                                <button onclick="addRow('<?= $language['code']; ?>')" type="button" class="add-localization-button">Добавить</button>
+
+                                <br><br>
+                                
+                                <input type="text" class="w-50p" disabled value="Ключ">
+                                <input type="text" class="w-50p" disabled value="Значение">
+
+                                <div id="inputs-<?= $language['code']; ?>">
+                                    <?php foreach($language['localization'] as $key => $word): ?>
+                                        <input 
+                                            type="text" 
+                                            name="localization[<?= $language['code']; ?>][<?= $key; ?>][key]" 
+                                            class="w-50p key-input-js" 
+                                            value="<?= $key; ?>"
+                                        >
+
+                                        <input 
+                                            type="text" 
+                                            name="localization[<?= $language['code']; ?>][<?= $key; ?>][word]" 
+                                            class="w-50p word-input-js" 
+                                            value="<?= $word; ?>"
+                                        >
+                                    <?php endforeach; ?>
+                                </div>
+                            </form>
+                        <?php endif; ?>
                     </div>
                 <?php endforeach; ?>
             </div>

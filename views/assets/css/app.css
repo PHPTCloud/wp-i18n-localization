@@ -63,6 +63,7 @@
     align-items: start;
     justify-content: center;
     flex-direction: row;
+    margin-bottom: 20px;
 }
 
 .tabs {
@@ -88,6 +89,14 @@
 
 .tabs-pages {
     flex: 1;
+    max-height: 400px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-left: 5px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .tabs-pages__page {
@@ -97,4 +106,63 @@
 
 .tabs-pages__page.is-active {
     display: block;
+}
+
+input.w-50p:focus,
+input.w-50p:active,
+input.w-50p {
+    width: 48%;
+    display: inline-block;
+    padding: 2px 5px;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    border-radius: 0px;
+    border: none;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid #ddd;
+    color: #01142F;
+    box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+
+.key-input-js,
+.word-input-js {
+    border: 1px solid #ddd !important;
+}
+
+.save-localization-button {
+    background-color: #fff;
+    border: 1px solid #35D073;
+    color: #35D073;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .1s ease;
+}
+
+.save-localization-button:hover,
+.save-localization-button:focus,
+.save-localization-button:active {
+    color: #fff;
+    background-color: #35D073;
+}
+
+.add-localization-button {
+    background-color: #fff;
+    border: 1px solid #1A2026;
+    color: #1A2026;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .1s ease;
+}
+
+.add-localization-button:hover,
+.add-localization-button:focus,
+.add-localization-button:active {
+    color: #fff;
+    background-color: #1A2026;
 }

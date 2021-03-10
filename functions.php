@@ -41,6 +41,10 @@ function i18nl__register_admin_menu_page()
  * Function for view admin menu page content
  */
 function i18nl__admin_menu_page_view() {
+    if(isset($_POST['localization'])) {
+        AdminPageController::store($_POST['localization']);
+    }
+
     $languages = AdminPageController::list();
     require_once __DIR__ . '/views/admin-page.php';
 }

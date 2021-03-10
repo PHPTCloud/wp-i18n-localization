@@ -75,4 +75,13 @@ class LocalizationClient
     {
         return $this->getStorage()->getLanguages();
     }
+
+    /**
+     * @param array $localization
+     * @return bool
+     */
+    public function storeLocalization(array $localization): bool
+    {
+        return $this->getStorage()->storeLocalization($localization);
+    }
 }

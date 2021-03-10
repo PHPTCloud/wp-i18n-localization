@@ -20,4 +20,14 @@ class AdminPageController
         $client = new LocalizationClient();
         return $client->languages();
     }
+
+    /**
+     * @param array $localization
+     * @return bool
+     */
+    public static function store(array $localization): bool
+    {
+        $client = new LocalizationClient();
+        return $client->storeLocalization($localization);
+    }
 }

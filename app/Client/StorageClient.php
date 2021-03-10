@@ -173,4 +173,27 @@ class StorageClient
 
         return $languages;
     }
+
+    /**
+     * @param array $localization
+     * @return bool
+     */
+    public function storeLocalization(array $localization): bool
+    {
+        foreach($localization as $code => $words) {
+            $data = [];
+            $filePath = self::STORAGE_PATH . '/'
+                . $code . '/'
+                . self::LOCALIZATION_FILENAME;
+
+            foreach($words as $word) {
+                $word['key'] = strtolower($word['key']);
+                $word['key'] = str_replace(' ', '_', $word['key']);
+                $data[$word['key']] = $word['word'];
+            }
+
+            file_put_contents($filePath, json_encode($data, JSON_UNESCAPED_UNICODE | JSON_OBJECT_AS_ARRAY | JSON_PRETTY_PRINT));
+        }
+        return true;
+    }
 }
