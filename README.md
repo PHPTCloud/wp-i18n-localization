@@ -3,8 +3,8 @@
 #### Installation
 
 1. clone this repo `git clone https://github.com/PHPTCloud/wp-i18n-localization.git`
-2. zip cloned files
-3. install plugin by zip. [see](https://wordpress.org/support/article/managing-plugins/)
+2. create archive with cloned files (.zip)
+3. upload zip-archive in your WordPress. [see](https://wordpress.org/support/article/managing-plugins/)
 4. done.
 
 #### Usage
