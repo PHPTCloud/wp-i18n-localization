@@ -19,5 +19,8 @@ echo i18nl__get('my_key_name');
 ?>
 ```
 
+#### Notes
+Plugin don't using database, all your `keys` and `values` are kept in plugin directory.
+
 #### Features
 Creating and managing of languages will be soon...
